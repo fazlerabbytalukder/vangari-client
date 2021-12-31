@@ -4,6 +4,7 @@ import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import googleLogo from '../../../images/google logo.png';
 import logo from '../../../images/logo.png';
+import loginImg from '../../../images/signin-image.jpg';
 
 const Login = () => {
     const [loginData, SetLoginData] = useState({})
@@ -34,8 +35,8 @@ const Login = () => {
     }
     return (
         <Container>
-            <Grid container spacing={1}>
-                <Grid item sx={{ mt: 8, boxShadow: 3, mx:'auto' }} xs={12} md={6}>
+            <Grid container spacing={1} sx={{boxShadow: 3, mt: 8}}>
+                <Grid item xs={12} md={6}>
                     <img style={{width:"200px"}} src={logo} alt="" />
                     <Typography variant="body1" gutterBottom>
                         Login
@@ -66,6 +67,13 @@ const Login = () => {
                     {isLoading && <CircularProgress />}
                     {user?.email && <Alert severity="success">User Created Successfully!</Alert>}
                     {authError && <Alert severity="error">{authError}</Alert>}
+                </Grid>
+
+
+
+                <Grid item sx={{ mt: 8 }} xs={12} md={6}>
+                    <img src={loginImg} alt="" /> <br />
+                    <NavLink style={{ textDecoration: 'none' }} to='/register'><Button sx={{my:2}} variant="text">New User? Please Register</Button></NavLink>
                 </Grid>
             </Grid>
         </Container>

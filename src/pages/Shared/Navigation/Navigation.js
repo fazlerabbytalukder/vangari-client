@@ -9,6 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
+
 const Navigation = () => {
     const { user, logout } = useAuth();
     console.log(user);
@@ -28,6 +29,13 @@ const Navigation = () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Authentication
                     </Typography>
+                    <Link to='/services'><Button color="inherit">Services</Button></Link>
+                    <Link to='/services'><Button color="inherit">Services</Button></Link>
+                    <Link to='/services'><Button color="inherit">Services</Button></Link>
+                    <Link to='/services'><Button color="inherit">Services</Button></Link>
+                    <Link to='/services'><Button color="inherit">Services</Button></Link>
+                    <Link to='/services'><Button color="inherit">Services</Button></Link>
+                    <Link to='/services'><Button color="inherit">Services</Button></Link>
                     <Link to='/services'><Button color="inherit">Services</Button></Link>
                     {
                         user?.email ?
