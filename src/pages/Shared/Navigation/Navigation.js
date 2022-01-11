@@ -17,12 +17,14 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
+import logo from '../../../images/logo.png';
+
 
 const Navigation = () => {
     const theme = useTheme();
     const useStyle = makeStyles({
         navItem: {
-            color: '#fff',
+            color: '#000',
             textDecoration: 'none'
         },
         navIcon: {
@@ -46,9 +48,12 @@ const Navigation = () => {
         mobileNavItem: {
             textDecoration: 'none',
             color: '#000'
+        },
+        navBackground: {
+            backgroundColor:'#fff'
         }
     })
-    const { navItem, navIcon, navItemContainer, navLogo, mobileNavItem } = useStyle();
+    const { navItem, navIcon, navItemContainer, navLogo, mobileNavItem, navBackground } = useStyle();
     const { user, logout } = useAuth();
 
     const [state, setState] = React.useState(false);
@@ -70,7 +75,7 @@ const Navigation = () => {
                             <MenuIcon />
                         </IconButton>
                         <Typography className={navLogo} variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            Authentication
+                            <img style={{ width: "20px" }} src={logo} alt="" />
                         </Typography>
                         <Box className={navItemContainer}>
                             <Link className={navItem} to='/'><Button color="inherit">Home</Button></Link>
