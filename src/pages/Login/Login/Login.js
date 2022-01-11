@@ -1,11 +1,11 @@
-import { AccountCircle } from '@mui/icons-material';
-import { Alert, Button, CircularProgress, Container, Grid, InputAdornment, TextField, Typography } from '@mui/material';
+import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import googleLogo from '../../../images/google logo.png';
 import logo from '../../../images/logo.png';
 import loginImg from '../../../images/signin-image.jpg';
+import Navigation from '../../Shared/Navigation/Navigation';
 
 const Login = () => {
     const [loginData, SetLoginData] = useState({})
@@ -35,7 +35,9 @@ const Login = () => {
         signInWithGoogle(location, history)
     }
     return (
-        <Container>
+        <>
+            <Navigation></Navigation>
+            <Container>
             <Grid container spacing={1} sx={{ boxShadow: 3, mt: 8 }}>
                 <Grid sx={{mb:4, mt:2}} item xs={12} md={6}>
                     <img style={{ width: "200px" }} src={logo} alt="" />
@@ -77,6 +79,7 @@ const Login = () => {
                 </Grid>
             </Grid>
         </Container>
+        </>
     );
 };
 
