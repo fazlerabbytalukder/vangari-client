@@ -1,4 +1,5 @@
-import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
+import { AccountCircle } from '@mui/icons-material';
+import { Alert, Button, CircularProgress, Container, Grid, InputAdornment, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
@@ -31,14 +32,14 @@ const Login = () => {
 
     //google sign in
     const handleGoogleSignIn = () => {
-        signInWithGoogle(location,history)
+        signInWithGoogle(location, history)
     }
     return (
         <Container>
-            <Grid container spacing={1} sx={{boxShadow: 3, mt: 8}}>
-                <Grid item xs={12} md={6}>
-                    <img style={{width:"200px"}} src={logo} alt="" />
-                    <Typography variant="body1" gutterBottom>
+            <Grid container spacing={1} sx={{ boxShadow: 3, mt: 8 }}>
+                <Grid sx={{mb:4, mt:2}} item xs={12} md={6}>
+                    <img style={{ width: "200px" }} src={logo} alt="" />
+                    <Typography style={{fontWeight:'bolder', fontSize:'30px', color:'#2C5BAA'}} variant="body1" gutterBottom>
                         Login
                     </Typography>
                     <form onSubmit={handleLoginSubmit}>
@@ -60,9 +61,8 @@ const Login = () => {
                             type="password"
                             size="small" />
                         <Button variant="contained" sx={{ width: "75%", m: 1 }} type="submit">Login</Button> <br />
-                        <Button sx={{my:2}} variant="text">--------------------- OR ---------------------</Button> <br />
-                        <Button onClick={handleGoogleSignIn} sx={{ width: "75%", m: 1 }} variant="outlined"><img src={googleLogo} alt="" style={{width:'25px'}}/>  Sign In With Google</Button> <br />
-                        <NavLink style={{ textDecoration: 'none' }} to='/register'><Button sx={{my:2}} variant="text">New User? Please Register</Button></NavLink>
+                        <Button sx={{ my: 2 }} variant="text">------------------------------- OR -------------------------------</Button> <br />
+                        <Button onClick={handleGoogleSignIn} sx={{ width: "75%", m: 1 }} variant="outlined"><img src={googleLogo} alt="" style={{ width: '25px' }} />  Sign In With Google</Button> <br />
                     </form>
                     {isLoading && <CircularProgress />}
                     {user?.email && <Alert severity="success">User Created Successfully!</Alert>}
@@ -73,7 +73,7 @@ const Login = () => {
 
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
                     <img src={loginImg} alt="" /> <br />
-                    <NavLink style={{ textDecoration: 'none' }} to='/register'><Button sx={{my:2}} variant="text">New User? Please Register</Button></NavLink>
+                    <NavLink style={{ textDecoration: 'none' }} to='/register'><Button sx={{ my: 2 }} variant="text">New User? Please Register</Button></NavLink>
                 </Grid>
             </Grid>
         </Container>
